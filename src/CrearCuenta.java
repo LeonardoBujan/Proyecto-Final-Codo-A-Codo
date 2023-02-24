@@ -20,5 +20,9 @@ public class CrearCuenta {
         System.out.println(segundaCuenta.saldo);
         System.out.println(exitoTransferencia);
         System.out.println(primeraCuenta.saldo);
+
+        Cuenta terceraCuenta = new Cuenta();
+        terceraCuenta.titular.nombre = "Leonardo";
+        System.out.println(terceraCuenta.titular.nombre);
     }
 }
