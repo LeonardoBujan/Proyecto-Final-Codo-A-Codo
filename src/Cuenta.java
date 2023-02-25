@@ -1,12 +1,48 @@
 class Cuenta {
-    double saldo;
-    int agencia;
-    int numeroCuenta;
-    Cliente titular = new Cliente();
+    private double saldo;
+    private int sucursal;
+    private int numeroCuenta;
+    private Cliente titular = new Cliente();
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public int getAgencia(){
+        return this.sucursal;
+    }
+
+    public void setAgencia(int agencia){
+        if (agencia > 0){
+            this.sucursal = agencia;
+        } else {
+            System.out.println("No está permitido ingresar valores negativos");
+        }
+    }
+
+    public int getNumeroCuenta(){
+        return this.numeroCuenta;
+    }
+
+    public void setNumeroCuenta(int numeroCuenta){
+        if (numeroCuenta > 0){
+            this.numeroCuenta = numeroCuenta;
+        } else {
+            System.out.println("No está permitido ingresar valores negativos");
+        }
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
 
     public void depositar(double valor){
         this.saldo += valor;
-    }
+    }    
 
     public boolean retirar(double valor){
         if (this.saldo >= valor){

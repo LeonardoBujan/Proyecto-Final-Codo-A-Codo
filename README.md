@@ -6,3 +6,4 @@
 - Definiendo Comportamientos
 - Composición de Objetos
 - Referencias e inicialización
+- Encapsulamiento y visibilidad (modificadores de acceso)
