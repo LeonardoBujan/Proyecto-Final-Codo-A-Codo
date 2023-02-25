@@ -8,13 +8,13 @@ class Cuenta {
         return this.saldo;
     }
 
-    public int getAgencia(){
+    public int getSucursal(){
         return this.sucursal;
     }
 
-    public void setAgencia(int agencia){
-        if (agencia > 0){
-            this.sucursal = agencia;
+    public void setSucursal(int sucursal){
+        if (sucursal > 0){
+            this.sucursal = sucursal;
         } else {
             System.out.println("No está permitido ingresar valores negativos");
         }
