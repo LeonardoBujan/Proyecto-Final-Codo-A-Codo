@@ -2,8 +2,10 @@ public class CrearCuenta {
     public static void main(String[] args) throws Exception {
         boolean exitoRetiro;
         boolean exitoTransferencia;
-
-        Cuenta primeraCuenta = new Cuenta();
+        
+        Cliente cliente1 = new Cliente("Leonardo Martinez", 30297432);
+        Cuenta primeraCuenta = new Cuenta(33, cliente1);
+        System.out.println(primeraCuenta.getTitular().getNroDocumento());
         primeraCuenta.depositar(100);
         System.out.println(primeraCuenta.getSaldo());
 
@@ -11,7 +13,9 @@ public class CrearCuenta {
         System.out.println(primeraCuenta.getSaldo());
         System.out.println(exitoRetiro);
 
-        Cuenta segundaCuenta = new Cuenta();
+        Cliente cliente2 = new Cliente("Jose Rojas", 21723456);
+        Cuenta segundaCuenta = new Cuenta(45, cliente2);
+        System.out.println(segundaCuenta.getTitular().getNroDocumento());
         segundaCuenta.depositar(2000);
         System.out.println(segundaCuenta.getSaldo());
 
@@ -21,12 +25,10 @@ public class CrearCuenta {
         System.out.println(exitoTransferencia);
         System.out.println(primeraCuenta.getSaldo());
 
-        Cuenta terceraCuenta = new Cuenta();
-        Cliente cliente = new Cliente();
-        cliente.setNombre("Leonardo");
-        cliente.setNroDocumento(25437894);
-        cliente.setTelefeno("01145678932");
-        terceraCuenta.setTitular(cliente);
-        System.out.println("Nombre: " + terceraCuenta.getTitular().getNombre());
+        Cliente cliente3 = new Cliente("Rosario Diaz", 34854277);
+        Cuenta terceraCuenta = new Cuenta(31, cliente3);
+        System.out.println(terceraCuenta.getTitular().getNroDocumento());
+
+        System.out.println("Se crearon " + Cuenta.getTotalCuentas() + " cuentas");
     }
 }

@@ -3,6 +3,20 @@ class Cliente{
     private int nroDocumento;
     private String telefeno;
 
+    // metodo constructor
+    public Cliente(String nombre, int nroDocumento){
+        if (nombre != null){
+            this.nombre = nombre;
+        } else {
+            System.out.println("Completar nombre de cliente");
+        }
+        if (nroDocumento > 1) {
+            this.nroDocumento = nroDocumento;
+        } else {
+            System.out.println("Completar con dni valido");
+        }
+    }
+
     public String getNombre() {
         return nombre;
     }

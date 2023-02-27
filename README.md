@@ -7,3 +7,4 @@
 - Composición de Objetos
 - Referencias e inicialización
 - Encapsulamiento y visibilidad (modificadores de acceso)
+- Método constructor de clase y miembros estáticos

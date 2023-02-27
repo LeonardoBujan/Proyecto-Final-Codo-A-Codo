@@ -2,7 +2,24 @@ class Cuenta {
     private double saldo;
     private int sucursal;
     private int numeroCuenta;
-    private Cliente titular = new Cliente();
+    private Cliente titular = new Cliente("Default", 2);
+
+    private static int totalCuentas = 0;
+
+    // metodo constructor
+    public Cuenta(int sucursal, Cliente cliente) {
+        if (sucursal <= 0) {
+            this.sucursal = 1;
+        } else {
+            this.sucursal = sucursal;
+        }
+
+        titular.setNombre(cliente.getNombre());
+        titular.setNroDocumento(cliente.getNroDocumento());
+        titular.setTelefeno(cliente.getTelefeno());
+
+        totalCuentas++;
+    }
 
     public double getSaldo() {
         return this.saldo;
@@ -38,6 +55,10 @@ class Cuenta {
 
     public void setTitular(Cliente titular) {
         this.titular = titular;
+    }
+
+    public static int getTotalCuentas(){
+        return Cuenta.totalCuentas;
     }
 
     public void depositar(double valor){
